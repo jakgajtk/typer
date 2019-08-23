@@ -1,0 +1,51 @@
+{
+  "name": "typer",
+  "private": true,
+  "scripts": {
+    "start": "meteor run",
+    "test": "meteor test --once --driver-package meteortesting:mocha",
+    "test-app": "TEST_WATCH=1 meteor test --full-app --driver-package meteortesting:mocha",
+    "visualize": "meteor --production --extra-packages bundle-visualizer",
+    "lint": "eslint .",
+    "pretest": "npm run lint --silent",
+    "lint:fix": "eslint . --fix"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.3.4",
+    "meteor-node-stubs": "^0.4.1",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  },
+  "meteor": {
+    "mainModule": {
+      "client": "client/main.jsx",
+      "server": "server/main.js"
+    },
+    "testModule": "tests/main.js"
+  },
+  "devDependencies": {
+    "@meteorjs/eslint-config-meteor": "^1.0.5",
+    "babel-eslint": "^10.0.2",
+    "eslint": "^6.2.1",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-import-resolver-meteor": "^0.4.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-meteor": "^6.0.0",
+    "eslint-plugin-react": "^7.14.3"
+  },
+  "eslintConfig": {
+    "extends": "@meteorjs/eslint-config-meteor",
+    "globals": {
+      "describe": "readonly",
+      "context": "readonly",
+      "before": "readonly",
+      "beforeEach": "readonly",
+      "after": "readonly",
+      "afterEach": "readonly",
+      "it": "readonly",
+      "expect": "readonly",
+      "Meteor": "readonly"
+    }
+  }
+}
